@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Leads</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../scripts/style.css">
+    <script src="../scripts/script.js"></script>
+
+</head>
+
+<body onload="getProducts()">
+
+    <div class="myform container">
+        <h2> Update Leads </h2>
+        <label for="id">Leads Id:</label> </br>
+        <input type="number" id="id" placeholder="leads id" onchange="checkId()"></br>
+        <div id="id_error"></div>
+        </br>
+        </br>
+
+        <div class="hide" id="hide">
+            <h4> Update values:</h4>
+            <label for="name">update Name:</label> </br>
+            <input type="text" id="name" placeholder="leads new name"> </br>
+            </br>
+            <label for="phone">update Phone:</label> </br>
+            <input type="number" id="phone" placeholder="leads new phone"> </br>
+            </br>
+            <label for="product_id">select a product:</label> </br>
+            <select id="product_id"></select>
+
+            <!--<input type="number" id="product_id" placeholder="new product id"> </br>-->
+            </br>
+            </br>
+            <button name="submit" id="submit" value="update" onclick="getParam()" class="btn-primary btn">Update Leads</button>
+            </br>
+            </br>
+        </div>
+        <table id="result" class="container"></table>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

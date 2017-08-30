@@ -1,0 +1,43 @@
+        * {
+            margin: auto 0;
+            text-align: center;
+        }
+        
+        body {
+            background-color: lightgray;
+        }
+        
+        button {
+            min-width: 240px;
+        }
+        
+        .myform {
+            margin: 100px;
+            background-color: white;
+            padding: 50px;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            max-width: 300px;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        .hide {
+            display: none;
+        }
