@@ -24,7 +24,7 @@ static function Check_if_id_exists($table_name, $id) {
  // updates data in a table 
 static function update_table($table_name, $id, $updateValues) {
         $DB = new connection();
-        $DB = $DB->updateORinsert("UPDATE ".$table_name." SET ".$updateValues." WHERE id='$id'");
+        $DB = $DB->updateSQL("UPDATE ".$table_name." SET ".$updateValues." WHERE id='$id'");
         return $DB;
 
 }
@@ -32,11 +32,9 @@ static function update_table($table_name, $id, $updateValues) {
 
 static function create_new_row($table_name, $column, $values, $exicute) {
         $DB = new connection();
-        $DB = $DB->getDB();
-
-        $Create = $DB->prepare("INSERT INTO ".$table_name."(".$column.") VALUES (".$values.")");
-        $Create->execute($exicute);
-return $Create;
+        $query = "INSERT INTO ".$table_name."(".$column.") VALUES (".$values.")";
+        $Create = $DB->insertSQL($query, $exicute);
+        return $Create;
 
 
 }

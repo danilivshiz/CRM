@@ -50,8 +50,8 @@ function sendAJAX(type) {
                     break;
                 case 'update':
                     var returnFromServer = JSON.parse(this.responseText);
-                    returnFromServer == 'true' ? 'Lead was updated' : 'Error';
-                    document.getElementById("result").innerHTML = returnFromServer;
+                    var r = returnFromServer == 'true' ? 'Lead was updated' : 'Error';
+                    document.getElementById("result").innerHTML = r;
                     break;
 
                 case 'getProducts':

@@ -76,7 +76,7 @@ class leads  {
         $this->lead_name = $name;
         $this->lead_phone = $phone;
         $this->product_id = $product_id;
-        $updateValues= "lead_name = '$this->lead_name' , lead_phone =  $this->lead_phone , product_id =  $this->product_id";
+        $updateValues= "lead_name = '".$this->lead_name."' , lead_phone =  ".$this->lead_phone.", product_id = ".$this->product_id;
         $update = BusinessLogicLayer::update_table(self::$table_name, $id, $updateValues);
     self::checkIsWasGood($update);
 }

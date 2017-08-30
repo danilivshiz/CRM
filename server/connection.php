@@ -44,7 +44,7 @@ function CheckId($query) {
     return $table->rowCount();
 }
 
-function updateORinsert($query) {
+function updateSQL($query) {
     $DB = $this->getDB();
     $table = $DB->prepare($query);
     $table->execute();
@@ -53,12 +53,17 @@ function updateORinsert($query) {
 }
 
 
+function insertSQL($query, $exicute) {
+    $DB = $this->getDB();
+    $table = $DB->prepare($query);
+    $table->execute($exicute);
+
+    return true;
+}
 
 
 
 
 }
-
-
 
 

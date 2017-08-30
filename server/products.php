@@ -56,7 +56,7 @@ class products  {
         $productsList =  BusinessLogicLayer::SelectAllFromTable(self::$table_name);
         $productSelect="";
     for ($i = 0; $i < count($productsList); $i++) {
-             $productSelect .= "<option value=" . $productsList[$i]["id"] . "'>" . $productsList[$i]["product_name"] . "</option>";
+             $productSelect .= "<option value=" . $productsList[$i]["id"] . ">" . $productsList[$i]["product_name"] . "</option>";
                 }
 
         
