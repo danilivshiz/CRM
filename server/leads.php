@@ -100,9 +100,6 @@ class leads  {
 }
 
 
-// public static function GetProducts() {
-//     $products = BusinessLogicLayer::innerJoin(self::$table_name, )
-// }
 // Deletes a row from lead table
 public static function DeleteLead($id) {
         $deleted =  BusinessLogicLayer::DeleteRow(self::$table_name, $id);

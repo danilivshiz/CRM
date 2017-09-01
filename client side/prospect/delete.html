@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Leads</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../scripts/style.css">
+
+</head>
+
+<body>
+
+    <div class="myform container">
+        <h2> Delete Lead </h2>
+        <label for="id">Leads Id:</label> </br>
+        <input type="number" id="id" placeholder="leads id" maxlength="4" onchange="checkId()"></br>
+        <div id="id_error"></div>
+        </br>
+        </br>
+        <div id="hide">
+            <button name="submit" id="submit" value="delete" onclick="getParam()" class="btn-primary btn">Delete Lead</button>
+            <div>
+                </br>
+                </br>
+                <table id="result" class="container"></table>
+            </div>
+
+            <script src="../scripts/script.js"></script>
+            <script src="../scripts/ajax.js"></script>
+
+
+
+
+</body>
+
+</html>

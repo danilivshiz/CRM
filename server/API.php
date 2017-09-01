@@ -30,6 +30,11 @@ switch ($getvalue) {
         echo json_encode(leads::GetAllLeads());
         break;
 
+        case 'selectProspects':
+        echo json_encode(prospects::GetAllProspects());
+        break;
+
+
         case 'id':
         echo leads::CheckId($id);
         break;
