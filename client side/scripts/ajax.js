@@ -36,12 +36,15 @@ function sendAJAX(type) {
                     break;
 
 
-                case 'id':
+                case 'checkLeadId':
+                case 'checkProspectId':
+
                     var check = JSON.parse(this.responseText);
                     if (check != true) {
                         $("#id_error").html("this id doesn't exsist!");
                         $("#hide").addClass("hide")
                     } else {
+                        $("#id_error").html("");
                         $("#hide").removeClass("hide")
                     }
                     break;
@@ -54,21 +57,39 @@ function sendAJAX(type) {
                     $("#result").html(r);
                     break;
 
-                case 'delete':
-                    var check = this.responseText;
-                    var r = check == "true" ? 'Lead was deleted' : 'Error';
-                    break;
-
-                case 'update':
+                case 'createProspect':
                     var returnFromServer = JSON.parse(this.responseText);
-                    var r = returnFromServer == 'true' ? 'Lead was updated' : 'Error';
+                    var r = returnFromServer == "true" ? 'Prospect was created' : 'Error';
                     $("input").css("border", "solid 1px black");
                     $("#result").css({ "color": "black", "fontFamily": "Arial" });
                     $("#result").html(r);
                     break;
 
-                case 'getProducts':
-                    $("#product_id").html(JSON.parse(this.responseText));
+
+
+                case 'delete':
+                case 'deleteProspect':
+                    var check = this.responseText;
+                    var r = check == "true" ? 'Was deleted' : 'Error';
+                    $("#result").html(r);
+
+                    break;
+
+                case 'update':
+                case 'updateProspect':
+
+                    var returnFromServer = JSON.parse(this.responseText);
+                    var r = returnFromServer == 'true' ? 'Updated successfuly' : 'Error';
+                    $("input").css("border", "solid 1px black");
+                    $("#result").css({ "color": "black", "fontFamily": "Arial" });
+                    $("#result").html(r);
+                    break;
+
+                case 'leadid':
+                case 'productList':
+                    $("#select_id").html(JSON.parse(this.responseText));
+                    $("#Lead_id").html(JSON.parse(this.responseText));
+
                     break;
 
                 default:
@@ -87,7 +108,8 @@ function sendAJAX(type) {
         "&name=" + name +
         "&id=" + id +
         "&phone=" + phone +
-        "&product_id=" + product_id;
+        "&product_id=" + product_id +
+        "&Lead_id=" + Lead_id;
 
     xhttp.open("GET", param, true);
     // xhttp.open("GET", "../server/API.php", true);

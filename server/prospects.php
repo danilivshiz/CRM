@@ -81,7 +81,7 @@ class prospects  {
 }
  
 
-// Creates a new lead in the leads table
+// Creates a new Prospect in the Prospect table
  public function CreateProspect($name, $phone, $lead_id){
         $this->prospect_name = $name;
         $this->prospect_phone = $phone;

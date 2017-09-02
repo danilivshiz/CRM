@@ -2,19 +2,19 @@
 <html>
 
 <head>
-    <title>Update Leads</title>
+    <title>Update Customers</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../scripts/style.css">
 
 </head>
 
-<body onload="getProducts('productList')">
+<body onload="getProducts('leadid')">
 
     <div class="myform container">
-        <h2> Update Leads </h2>
-        <label for="id">Leads Id:</label> </br>
-        <input type="number" id="id" placeholder="leads id" maxlength="4" onchange="checkId('checkLeadId')"></br>
+        <h2> Update Customers </h2>
+        <label for="id">Customers Id:</label> </br>
+        <input type="number" id="id" placeholder="Prospect id" maxlength="4" onchange="checkId('checkCustomerId')"></br>
         <div id="id_error"></div>
         </br>
         </br>
@@ -27,13 +27,16 @@
             <label for="phone">update Phone:</label> </br>
             <input type="number" id="phone" placeholder="leads new phone"> </br>
             </br>
-            <label for="select_id">select a product:</label> </br>
+            <label for="profession">Update profession:</label> </br>
+            <input type="text" id="profession" placeholder="Customer profession"> </br>
+            </br>
+            <label for="select_id">select a Prospect id:</label> </br>
             <select id="select_id"></select>
 
             <!--<input type="number" id="product_id" placeholder="new product id"> </br>-->
             </br>
             </br>
-            <button name="submit" id="submit" value="updateProspect" class="btn-primary btn">Update Leads</button>
+            <button name="submit" id="submit" value="updateCustomer" class="btn-primary btn">Update Customer</button>
             </br>
             </br>
         </div>

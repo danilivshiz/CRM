@@ -115,4 +115,19 @@ public static function checkIsWasGood($update) {
 }
 
 
+
+// Get Leads id and return a select
+   public static function GetLeadsid() {
+        $idList =  BusinessLogicLayer::SelectAllFromTable(self::$table_name);
+        $leadSelect="";
+    for ($i = 0; $i < count($idList); $i++) {
+             $leadSelect .= "<option value=" . $idList[$i]["id"] . ">" . $idList[$i]["id"] . "</option>";
+                }
+    
+
+        return $leadSelect; 
+    }
+
+
+
 }

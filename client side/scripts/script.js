@@ -4,7 +4,7 @@ var name;
 var type;
 var phone;
 var product_id;
-var lead_id;
+var Lead_id;
 
 // function constructor for leads
 function leads(id, lead_name, lead_phone, product_id) {
@@ -55,15 +55,15 @@ function creaTable(data) {
 
 
 // Send the id to the DB and check if it exsist
-function checkId() {
+function checkId(check) {
     $("#id_error").html("");
     id = $("#id").val();
-    sendAJAX('id');
+    sendAJAX(check);
 }
 
 // Gets the products from DB for select option
-function getProducts() {
-    sendAJAX('getProducts');
+function getProducts(list) {
+    sendAJAX(list);
 }
 
 // Gets values after validation and sends then to ajax
@@ -72,6 +72,7 @@ function getParam() {
     id = $("#id").val();
     name = $("#name").val();
     phone = $("#phone").val();
-    product_id = $("#product_id option:selected").val();
+    product_id = $("#select_id option:selected").val();
+    Lead_id = $("#select_id option:selected").val();
     sendAJAX(buttonValue);
 }

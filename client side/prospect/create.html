@@ -2,17 +2,17 @@
 <html>
 
 <head>
-    <title>Update Leads</title>
+    <title>Create New Prospect</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../scripts/style.css">
 
 </head>
 
-<body onload="getProducts()">
+<body onload="getProducts('leadid')">
 
     <div class="myform container">
-        <h2> Create Leads </h2>
+        <h2> Create Prospect </h2>
         </br>
         </br>
         <h4> Create values:</h4>
@@ -22,13 +22,13 @@
         <label for="phone">Phone:</label> </br>
         <input type="number" id="phone" placeholder="Leads phone"> </br>
         </br>
-        <label for="product_id">select a product:</label> </br>
-        <select id="product_id"></select>
+        <label for="select_id">select a Lead id:</label> </br>
+        <select id="select_id"></select>
         <!--<label for="product id">Product id:</label> </br>
         <input type="number" id="product_id" placeholder="Product id"> </br>-->
         </br>
         </br>
-        <button name="submit" id="submit" value="create" class="btn-primary btn">Create Lead</button>
+        <button name="submit" id="submit" value="createProspect" class="btn-primary btn">Create Prospect</button>
         </br>
         </br>
         <table id="result" class="container"></table>

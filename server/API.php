@@ -19,6 +19,7 @@ require ('validation.php');
  $name = trim($_REQUEST['name']);
  $phone = trim($_REQUEST['phone']);
  $product_id = trim($_REQUEST['product_id']);
+ $Lead_id = trim($_REQUEST['Lead_id']);
 
 
 
@@ -34,14 +35,26 @@ switch ($getvalue) {
         echo json_encode(prospects::GetAllProspects());
         break;
 
+        case 'leadid':
+        echo json_encode(leads::GetLeadsid());
+        break;
 
-        case 'id':
+        case 'checkLeadId':
         echo leads::CheckId($id);
         break;
 
-        case 'getProducts':
+        case 'checkProspectId':
+        echo prospects::CheckId($id);
+        break;
+
+        case 'productList':
         echo json_encode(products::GetProductsSelect());
         break;
+
+        case 'productList':
+        echo json_encode(products::GetProductsSelect());
+        break;
+
 
 
         case 'update':
@@ -61,6 +74,24 @@ switch ($getvalue) {
 
         break;
 
+        case 'updateProspect':
+        if (Validat::isNumber($id) &&
+        Validat::NotNull($name) &&
+        Validat::isNumber($phone) &&
+        Validat::optionSelected($Lead_id))
+        {
+                $update = new prospects($id, $name, $phone, $Lead_id);
+                $update->UpdateProspects($id, $name, $phone, $Lead_id);
+                $OK = prospects::$isOK;
+                echo json_encode($OK);
+        }
+        else {
+                echo json_encode("input error");
+        }
+
+        break;
+
+
         case 'create':
         if (Validat::NotNull($name) &&
         Validat::isNumber($phone) &&
@@ -73,12 +104,33 @@ switch ($getvalue) {
         }
         else {
                 echo json_encode("input error");
-        }     
-
+        }  
         break;
+
+        case 'createProspect':
+        if (Validat::NotNull($name) &&
+        Validat::isNumber($phone) &&
+        Validat::optionSelected($Lead_id))
+        {
+                $create = new prospects(0, $name, $phone, $Lead_id);
+                $create->CreateProspect($name, $phone, $Lead_id);
+                $OK = prospects::$isOK;
+                echo json_encode($OK);
+        }
+        else {
+                echo json_encode("input error");
+        }  
+        break;
+
+
+
 
         case 'delete':
         echo leads::DeleteLead($id);
+        break;
+
+        case 'deleteProspect':
+        echo prospects::DeleteProspect($id);
         break;
 
 
